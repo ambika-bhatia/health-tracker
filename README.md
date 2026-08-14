@@ -1,4 +1,3 @@
-# Health Tracker
 # 🌿 Health Tracker
 
 A full-stack web app to track daily health goals.
