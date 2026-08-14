@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Tracker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- Header -->
+    <header>
+      <h1>🌿 Health Tracker</h1>
+      <p>Track your daily health goals</p>
+    </header>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-icon">💧</div>
+        <div class="stat-info">
+          <h3 id="water-count">0</h3>
+          <p>Glasses of Water</p>
+          <p id="water-msg" class="message low"></p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🔥</div>
+        <div class="stat-info">
+          <h3 id="calorie-count">0</h3>
+          <p>Calories</p>
+          <p id="calorie-msg" class="message low"></p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">👟</div>
+        <div class="stat-info">
+          <h3 id="steps-count">0</h3>
+          <p>Steps</p>
+          <p id="steps-msg" class="message low"></p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">😴</div>
+        <div class="stat-info">
+          <h3 id="sleep-count">0</h3>
+          <p>Hours of Sleep</p>
+          <p id="sleep-msg" class="message low"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input Section -->
+    <div class="input-section">
+
+      <div class="input-group">
+        <label>💧 Water (glasses)</label>
+        <div class="input-row">
+          <input type="number" id="water-input" placeholder="Add glasses"/>
+          <button onclick="addWater()">Add</button>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>🔥 Calories</label>
+        <div class="input-row">
+          <input type="number" id="calorie-input" placeholder="Add calories"/>
+          <button onclick="addCalories()">Add</button>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>👟 Steps</label>
+        <div class="input-row">
+          <input type="number" id="steps-input" placeholder="Add steps"/>
+          <button onclick="addSteps()">Add</button>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>😴 Sleep (hours)</label>
+        <div class="input-row">
+          <input type="number" id="sleep-input" placeholder="Add hours"/>
+          <button onclick="addSleep()">Add</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Reset Button -->
+    <button class="reset-btn" onclick="resetAll()">🔄 Reset All</button>
+
+  </div>
+
+ <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
