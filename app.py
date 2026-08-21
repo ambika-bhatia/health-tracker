@@ -43,8 +43,12 @@ def get_data():
 @app.route('/add', methods=['POST'])
 def add():
     data = request.get_json()
-    field = data['field']       # kaunsi cheez add karni hai: water/calories/steps/sleep
-    value = data['value']       # kitna add karna hai
+    field = data['field']
+    value = data['value']
+
+    allowed_fields = ['water', 'calories', 'steps', 'sleep']
+    if field not in allowed_fields:
+        return jsonify({'status': 'error', 'message': 'Invalid field'}), 400
 
     conn = sqlite3.connect('health.db')
     cursor = conn.cursor()
